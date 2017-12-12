@@ -68,7 +68,7 @@ After constructing a valid JWT, your application can issue a POST request (x-www
 
 Request body format:
 
-POST <token_endpoint> `grant_type=client_credentials&client_assertion_type:urn:ietf:params:oauth:client-assertion-type:jwt-bearer&client_id=<client_id>&client_assertation=<jwt_signed_with_client_secret>`
+`grant_type=client_credentials&client_assertion_type:urn:ietf:params:oauth:client-assertion-type:jwt-bearer&client_id=<client_id>&client_assertation=<jwt_signed_with_client_secret>`
 
 Example request:
 

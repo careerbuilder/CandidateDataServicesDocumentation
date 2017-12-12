@@ -31,22 +31,26 @@ Once OAuth2 credentials have been obtained, the user may use them to generate a 
 
 The JWT must contain the following JSON document format:  
 
-```{ 
+```
+{ 
   iss: "<client_id>",
   sub: "<client_id>",
   aud: "<token_url>",
   exp: Time.now + 30s
-}```
+}
+```
 
 Where `exp` is the expiration date of the JWT. The JWT is short-lived and should only last for 30-60 seconds.  The value is in epoch time.    
 
 For example:
-```{
+```
+{
   iss: "abc12345", 
   sub: "abc12345", 
   aud: "https://api.careerbuilder.com/oauth/token", 
   exp: 1473378085
-}```
+}
+```
 
 After encoding the JWT, you should get something similar to the following:
 
@@ -72,13 +76,15 @@ Example request:
 
 Example response:
 
-```{ 
+```
+{ 
   "data": { 
     "access_token": "tabc1234567xyz", 
     "token_type": "bearer", 
     "expires_in": "2100" 
   }
-}```
+}
+```
 
 ## Calling CareerBuilder APIs using an Access Token
 

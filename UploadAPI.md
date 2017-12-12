@@ -24,7 +24,7 @@ The candidate can also be searched for via the Search API or downloaded via the 
 
 ## Usage
 
-- As with all CareerBuilder APIs, the OAuth 2.0 Client Credentials flow must be used for authentication. More information can be found [here.](/CB OAuth.md)
+- As with all CareerBuilder APIs, the OAuth 2.0 Client Credentials flow must be used for authentication. More information can be found [here.](/OAuth.md)
 - Authorized bearer token must be included in the header as per CareerBuilder's OAuth documentation.
 - Resumes will be parsed as English by default unless a country code parameter is provided. If the resume is in another language, it is recommended to provide a location.
 - A valid email address is required for indexing a candidate. It is suggested to provide an email address in case one cannot be parsed from the resume .

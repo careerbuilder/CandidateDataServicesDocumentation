@@ -46,12 +46,12 @@ NOTE: With the exception of geography data, all information added in optional fi
 | --- | --- |
 |file_name|Name of the file to be uploaded via the upload API; if none is given, we will create one from the candidate's name.
 |plain_text_resume|Text representation of resume. The text can be formatted or contain HTML. Must be greater than 100 characters in length.
-|base64_resume|(Required) Candidate’s resume as base64. (e.g., PDF or Word Doc). Acceptable file types are: .docx, .rtf, .doc, .txt, .wps, .odt, .wpd, .docm, and .pdf.
+|base64_resume|(Required) Candidate’s resume file, encoded as a Base64 string. Acceptable file types are: .docx, .rtf, .doc, .txt, .wps, .odt, .wpd, .docm, and .pdf.
 |candidate_name|Candidate’s full name. 64 characters max.
 |email|Candidate email. This email overrides any parsed information. Must be a valid email address 'example@domain.tld'. Max 128 characters.
 |phone_number|Phone number of the candidate
 |gender|Candidate’s gender. Possible values: M, F, or U.
-|relocation| (Boolean) Will the candidate relocate?
+|relocation| (Boolean) Indicates whether the candidate is willing to relocate.
 |postal_code|Postal code of the candidate. Accepts international values.
 |locality|Candidate’s current city. Max 64 characters.
 |admin_area| First level civil entity below country level. For the US this is the state. Short names should follow ISO 3166-2.

@@ -1,4 +1,4 @@
-# Candidate Upload APIv2
+# Candidate Upload API
 
 Contents
 
@@ -10,19 +10,21 @@ Contents
 
 ## Overview
 
-The Upload APIv2 allows the caller to upload a candidate, their resume, and additional candidate information to Careerbuilder's MyCandidates application. This API operates as a wrapper for the legacy Upload APIv1 endpoint. Through the legacy endpoint the candidate is parsed, enriched, and indexed into MyCandidates for use in various products throughout the CareerBuilder ecosystem.
+*This API is owned and maintained by CareerBuilder's Candidate Data Services team. Please contact this team for any questions or feedback regarding this API.*
 
-This endpoint is synchronous and provides immediate feadback if there are issues in the request. If the resume fails parsing the API creates a Contact Card of the most important information in your request.
+CareerBuilder's Candidate Upload API allows the caller to upload a candidate, their resume, and additional candidate information to Careerbuilder's MyCandidates application. The candidate is parsed, enriched, and indexed into the MyCandidates data repository.
 
-A Contact Card is a lean version of a candidate profile and is made up of the candidate's email and base64_resume; also, name and plain_text_resume if available. A contact card will not be parsed and the resume is provided for hisotrical record and retrival only. The contact card can be made into a full profile easily by fixing the errors in your original request and re-uploading via the API.
+This endpoint is synchronous and provides immediate feedback if there are issues in the request. If the resume fails to parse properly the API creates a "contact card" of the most important information in your request.
 
-Only the most recent record for a candidate per vendor, per client is indexed. See the [myCandidates Overview](readme.md) for more information.
+A Contact Card is a lean version of a candidate profile and is made up of the candidate's email and base64-encoded resume, along with name and plain-text resume if available. A contact card will not be parsed, and the resume text is stored for retrieval purposes only. A candidate record stored as a contact card can be converted into a full profile easily by fixing the errors in the original request and re-uploading via the API.
 
-The candidate can also be [searched for](SearchAPI.md), [downloaded](CandidateAPI.md), and additional candidate fields edited through the Tags, Attributes, JobReqID, and Contact Date APIs.
+Only the most recent record for a candidate per vendor-client integration is indexed.
+
+The candidate can also be searched for via the Search API or downloaded via the Candidate API. Additional candidate fields may be edited via the Tags, Attributes, JobReqID, and Contact Date APIs.
 
 ## Usage
 
-- Client Credentials flow must be used for authentication.
+- As with all CareerBuilder APIs, the OAuth 2.0 Client Credentials flow must be used for authentication. More information can be found [here.](/CB OAuth.md)
 - Authorized bearer token must be included in the header as per CareerBuilder's OAuth documentation.
 - Resumes will be parsed as English by default unless a country code parameter is provided. If the resume is in another language, it is recommended to provide a location.
 - A valid email address is required for indexing a candidate. It is suggested to provide an email address in case one cannot be parsed from the resume .

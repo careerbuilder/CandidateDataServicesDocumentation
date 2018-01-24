@@ -20,7 +20,7 @@ Retrieves the list of all active clients and their data.
 
 ```json
 {
-    data: [
+    "data": [
         {
             "client_key": "CK8Q0276KVZS0Z0LYVLM",
             "client_name": "Amerit Consulting Inc.",

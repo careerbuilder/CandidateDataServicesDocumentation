@@ -25,16 +25,8 @@ Retrieves the list of all active clients and their data.
             "client_key": "CK8Q0276KVZS0Z0LYVLM",
             "client_name": "Amerit Consulting Inc.",
             "account_did": "A7A0RX6PY8FX77TQ0RW",
-            "account_tcv": 457189,
-            "annual_price": 38500,
-            "contract_start_date": "2015-11-19T01:00:00",
-            "contract_end_date": "2017-09-18T01:00:00",
-            "deactivation_date": "1970-01-01T00:00:00Z",
-            "currency": "USD"
         }
-
     ]
-
 }
 ```
 
@@ -47,14 +39,44 @@ Retrieves the list of all active clients and their data.
 ```json
 {
     "data": {
-        "client_name": "Test Account",
-        "account_did": "000000000000000001",
-        "is_active": true,
+        "client_name": "Personified",
+        "account_did": "A7F0PT78MTMZ470WBBT",
         "product_instance_id": "",
-        "client_key": "CK0003Z6CJQH0ZX1WYMC",
-        "contract_start_dt": "4/11/2017 12:00:00 AM",
-        "contract_end_dt": "4/11/2017 12:00:00 AM",
-        "deactivated_dt": ""
+        "client_key": "CKHT82M6S1Y6DRRBSQLY",
+        "default_fields": [
+            {
+                "name": "application_job_source",
+                "is_facetable": true,
+                "is_searchable": true
+            },
+            {
+                "name": "application_job_title",
+                "is_facetable": true,
+                "is_searchable": true
+            }
+        ],
+        "custom_fields": [
+            {
+                "name": "TESTCUSTOMFIELD",
+                "label": "This is a test field",
+                "vendor_key": "VK7G3XS5ZJ5JY861L7M0",
+                "vendor_name": "TALENTGATHER",
+                "vendor_display_name": "Talent Gather",
+                "is_facetable": false,
+                "is_searchable": true
+            }
+        ],
+        "attribute_fields": [
+            {
+                "name": "Available_Date",
+                "label": "Available Date",
+                "vendor_key": "VK7G3XS5ZJ5JY861L7M0",
+                "vendor_name": "TALENTGATHER",
+                "vendor_display_name": "Talent Gather",
+                "is_facetable": true,
+                "is_searchable": true
+            }
+        ]
     }
 }
 ```

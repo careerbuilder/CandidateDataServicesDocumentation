@@ -74,8 +74,8 @@ NOTE: With the exception of geography data, all information added in optional fi
 |job_req_ids|A list of strings containing any job requisitions with which this candidate should be associated.
 |activity_history|A list of activity history objects containing a date, in yyyy/MM format, indicating when a candidate was active. An active candidate is one that has applied to a job, changed a resume or done any activity that would be viewed as being active in the job market. This field is used when selecting the document exposed to users.
 |tags|Pipe delimited string containing any custom values that should be associated to the candidate. [See the Tag API for more information on Tags](TagAPI.md)
-|vendor_dynamic_field|A list of CustomField objects to store with this candidate. Must not be an empty list. [See Custom Fields](CustomFields.md).
-|client_dynamic_field|A list of Attribute objects to store with this candidate. Must not be an empty list. [See Attributes](Attributes.md).
+|vendor_fields|A list of CustomField objects to store with this candidate. Must not be an empty list. [See Custom Fields](CustomFields.md).
+|client_fields|A list of Attribute objects to store with this candidate. Must not be an empty list. [See Attributes](Attributes.md).
 
 ## Request
 

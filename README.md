@@ -13,4 +13,4 @@ Used to create and manipulate Candidate Data.
 Used to search and index Candidate Data.
 * [Customer API](/CustomerAPI.md)
 * [Document API](/DocumentAPI.md)
-* [Search API] (/SearchAPI.md)
+* [Search API] (http://careerbuildersearch.com/docs/candidate)

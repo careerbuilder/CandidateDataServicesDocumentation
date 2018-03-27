@@ -7,10 +7,10 @@ Used to create and manipulate Candidate Data.
 * [Candidate Upload API](/UploadAPI.md)
 * [Client API](/ClientAPI.md)
 * Candidate Status API
-* Recruiter Actions API
+* [Recruiter Actions API](/ActionsAPI.md)
 
 ## Candidate Search APIs
 Used to search and index Candidate Data.
 * [Customer API](/CustomerAPI.md)
 * [Document API](/DocumentAPI.md)
-* [Search API] (http://careerbuildersearch.com/docs/candidate)
+* [Search API](http://careerbuildersearch.com/docs/candidate)

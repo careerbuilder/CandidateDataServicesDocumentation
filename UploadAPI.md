@@ -63,7 +63,7 @@ NOTE: With the exception of geography data, all information added in optional fi
 |most_recent_job_title| Name of the candidate’s most recent job title. 128 characters max.
 |military_experience|Candidate’s military experience. Possible values: None, Veteran, ActiveDuty, ActiveReserve, or InActiveReserve.
 |us_security_clearance|Indicates whether the candidate has a US security clearance.
-|last_contact_date|The last date the candidate was active. Date must be formatted as `yyyy-MM-dd`.
+|last_modified_date|The last date the candidate record was modified. Date must be formatted as `yyyy-MM-dd`.
 |languages| Languages in which the candidate is fluent. Provided in ISO 639-1 two letter language codes as an array of strings. Possible values: en(English), zh(Chinese), cs(Czech), da(Danish), nl(Dutch), et(Estonian), fi(Finnish), hi(Hindi), fr(French), de(German), el(Greek), he(Hebrew), hu(Hungarian), is(Icelandic), it(Italian), ja(Japanese), ko(Korean), lv(Latvian), lt(Lithuanian), no(Norwegian), pl(Polish), pt(Portuguese), ro(Romanian), ru(Russian), es(Spanish), or sv(Swedish).
 |vendor_key|(Required) Key passed in to identify the ATS/vendor. Prefixed with “VK”
 |candidate_url|URL linking back to the original source’s version of the candidate. max 1024 characters.
@@ -74,8 +74,8 @@ NOTE: With the exception of geography data, all information added in optional fi
 |job_req_ids|A list of strings containing any job requisitions with which this candidate should be associated.
 |activity_history|A list of activity history objects containing a date, in yyyy/MM format, indicating when a candidate was active. An active candidate is one that has applied to a job, changed a resume or done any activity that would be viewed as being active in the job market. This field is used when selecting the document exposed to users.
 |tags|Pipe delimited string containing any custom values that should be associated to the candidate. [See the Tag API for more information on Tags](TagAPI.md)
-|vendor_dynamic_field|A list of CustomField objects to store with this candidate. Must not be an empty list. [See Custom Fields](CustomFields.md).
-|client_dynamic_field|A list of Attribute objects to store with this candidate. Must not be an empty list. [See Attributes](Attributes.md).
+|vendor_fields|A list of CustomField objects to store with this candidate. Must not be an empty list. [See Custom Fields](CustomFields.md).
+|client_fields|A list of Attribute objects to store with this candidate. Must not be an empty list. [See Attributes](Attributes.md).
 
 ## Request
 

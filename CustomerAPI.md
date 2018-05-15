@@ -1,6 +1,54 @@
 ## Customer
 
-/Customer
+corporate/candidatesearch/customer
+
+### GET
+
+Returns the Custom Fields defined for a customer as well as some limited customer information.
+
+|Field|Type|Description|
+|--- |--- |--- |
+|customer_key|string|the key with which the customer was created|
+
+[corporate/candidatesearch/customer?customer_key=CKHT82M6S1Y6DRRBSQLY](https://apimanagement.cbplatform.link/#routes/tester?preURL=https%3A%2F%2Fwwwtest.api.careerbuilder.com%2F&postURL=corporate%2Fcandidatesearch%2Fcustomer%3Fcustomer_key%3DCKHT82M6S1Y6DRRBSQLY+&method=get&contentType=application%2Fjson&acceptType=application%2Fjson&version=default&region=staging&flow=client_credentials&userDid=&accountDid=&headers=&body=)
+
+```json
+{
+  "data": {
+    "customer": {
+      "customer_key": "CKHT82M6S1Y6DRRBSQLY",
+      "customer_name": "CKHT82M6S1Y6DRRBSQLY",
+      "remaining_facetable_fields": 9,
+      "languages_supported": [
+        "English"
+      ],
+      "custom_fields": [
+        {
+          "field_name": "field_name",
+          "field_type": "string",
+          "is_searchable": true,
+          "is_facetable": true,
+          "max_field_size_in_characters": 128
+        }
+      ]
+    },
+    "status_code": 200
+  },
+  "timing": {
+    "time_received": "2018-05-15T15:56:17.3164000Z",
+    "time_elapsed": 0.026
+  },
+  "forensics": {
+    "input": {
+      "customer_key": "CKHT82M6S1Y6DRRBSQLY ",
+      "request_id": "3a89a626-685e-4bc7-b9a8-248415400d92"
+    },
+    "internal_forensics": {
+      "StatusCodeReturnedFromSearchCore": 0
+    }
+  }
+}
+```
 
 ### POST
 

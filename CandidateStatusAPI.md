@@ -155,40 +155,40 @@ Sample result:
     "requisition_id":"1",
     "vendor_key":"test_vendor_key",
     "status_detail":"Test status detail",
-    "status_level": "application",
-    "status_date": "2017-03-19T23:04:01Z",
-    "level_id": "test_level_id",
-    "status": "test_status",
-    "client": "test_client",
-    "requisition_title": "test_req_title",
-    "account": "AAAA_1234",
-    "candidate_email": "testEmail@123.com"
+    "status_level":"application",
+    "status_date":"2017-03-19T23:04:01Z",
+    "level_id":"test_level_id",
+    "status":"test_status",
+    "client":"test_client",
+    "requisition_title":"test_req_title",
+    "account":"AAAA_1234",
+    "candidate_email":"testEmail@123.com"
 },
 {
-    "requisition_id": "2",
-    "vendor_key": "test_vendor_key",
-    "status_detail": "Test status detail",
-    "status_level": "application",
-    "status_date": "2017-03-19T23:04:01Z",
-    "level_id": "test_level_id",
-    "status": "test_status",
-    "client": "test_client",
-    "requisition_title": "test_req_title",
-    "account": "AAAA_1234",
-    "candidate_email": "testEmail@123.com"
+    "requisition_id":"2",
+    "vendor_key":"test_vendor_key",
+    "status_detail":"Test status detail",
+    "status_level":"application",
+    "status_date":"2017-03-19T23:04:01Z",
+    "level_id":"test_level_id",
+    "status":"test_status",
+    "client":"test_client",
+    "requisition_title":"test_req_title",
+    "account":"AAAA_1234",
+    "candidate_email":"testEmail@123.com"
 },
 {
-    "requisition_id": "3",
-    "vendor_key": "test_vendor_key",
-    "status_detail": "Test status detail",
-    "status_level": "application",
-    "status_date": "2017-03-19T23:04:01Z",
-    "level_id": "test_level_id",
-    "status": "test_status",
-    "client": "test_client",
-    "requisition_title": "test_req_title",
-    "account": "AAAA_1234",
-    "candidate_email": "testEmail@123.com"
+    "requisition_id":"3",
+    "vendor_key":"test_vendor_key",
+    "status_detail":"Test status detail",
+    "status_level":"application",
+    "status_date":"2017-03-19T23:04:01Z",
+    "level_id":"test_level_id",
+    "status":"test_status",
+    "client":"test_client",
+    "requisition_title":"test_req_title",
+    "account":"AAAA_1234",
+    "candidate_email":"testEmail@123.com"
 }]
 ```
 
@@ -203,7 +203,7 @@ Requirements:
   - status
   - status_date
   - status_level (must be either candidate or application) 
-      - if candidate: requisition_id and requisition_title must be
+      - if candidate:requisition_id and requisition_title must be
         left off
     
       - if application: requisition_id is required. Requisition_title
@@ -212,30 +212,30 @@ Requirements:
 Sample request 1 (application):
 ```json
 {
-"account": "AAAA_1234",
-"candidate_email": "testEmail@123.com",
-"vendor_key": "test_vendor_key",
-"client": "test_client",
-"requisition_id": "123",
-"level_id": "test_level_id",
-"status": "test_status",
-"status_date": "2017-03-19T19:04:01Z",
-"status_level": "application",
-"status_detail": "Test status detail"
+"account":"AAAA_1234",
+"candidate_email":"testEmail@123.com",
+"vendor_key":"test_vendor_key",
+"client":"test_client",
+"requisition_id":"123",
+"level_id":"test_level_id",
+"status":"test_status",
+"status_date":"2017-03-19T19:04:01Z",
+"status_level":"application",
+"status_detail":"Test status detail"
 }
 ```
 Sample request 2 (candidate):
 ```json
 {
-"account": "AAAA_1234",
-"candidate_email": "testEmail@123.com",
-"vendor_key": "test_vendor_key",
-"client": "test_client",
-"level_id": "test_level_id",
-"status": "test_status",
-"status_date": "2017-03-19T19:04:01Z",
-"status_level": "candidate",
-"status_detail": "Test status detail"
+"account":"AAAA_1234",
+"candidate_email":"testEmail@123.com",
+"vendor_key":"test_vendor_key",
+"client":"test_client",
+"level_id":"test_level_id",
+"status":"test_status",
+"status_date":"2017-03-19T19:04:01Z",
+"status_level":"candidate",
+"status_detail":"Test status detail"
 }
 ```
 
@@ -259,58 +259,58 @@ Optional:
 Sample request 1:
 ```json
 {
-    "account": "aaaa_1234",
-    "candidate_email": ["testEmail@123.com", "testEmail@1234.com"],
-    "status_date": "2017-03-18T19:04:01Z"
+    "account":"aaaa_1234",
+    "candidate_email":["testEmail@123.com", "testEmail@1234.com"],
+    "status_date":"2017-03-18T19:04:01Z"
 }
 ```
 Sample request 2:
 ```json
 {
-    "account": "aaaa_1234",
-    "requisition_id": ["1", "2", "123"],
-    "status_date": "2017-03-18T19:04:01Z"
+    "account":"aaaa_1234",
+    "requisition_id":["1", "2", "123"],
+    "status_date":"2017-03-18T19:04:01Z"
 }
 ```
 
 Sample response:  
 ```json
 [{
-    "requisition_id": "1",
-    "vendor_key": "test_vendor_key",
-    "status_detail": "Test status detail",
-    "status_level": "application",
-    "status_date": "2017-03-19T23:04:01Z",
-    "level_id": "test_level_id",
-    "status": "test_status",
-    "client": "test_client",
-    "requisition_title": "test_req_title",
-    "account": "AAAA_1234",
-    "candidate_email": "testEmail@123.com"
+    "requisition_id":"1",
+    "vendor_key":"test_vendor_key",
+    "status_detail":"Test status detail",
+    "status_level":"application",
+    "status_date":"2017-03-19T23:04:01Z",
+    "level_id":"test_level_id",
+    "status":"test_status",
+    "client":"test_client",
+    "requisition_title":"test_req_title",
+    "account":"AAAA_1234",
+    "candidate_email":"testEmail@123.com"
 },
 {
-    "requisition_id": "2",
-    "vendor_key": "test_vendor_key",
-    "status_detail": "Test status detail",
-    "status_level": "application",
-    "status_date": "2017-03-19T23:04:01Z",
-    "level_id": "test_level_id",
-    "status": "test_status",
-    "client": "test_client",
-    "requisition_title": "test_req_title",
-    "account": "AAAA_1234",
-    "candidate_email": "testEmail@123.com"
+    "requisition_id":"2",
+    "vendor_key":"test_vendor_key",
+    "status_detail":"Test status detail",
+    "status_level":"application",
+    "status_date":"2017-03-19T23:04:01Z",
+    "level_id":"test_level_id",
+    "status":"test_status",
+    "client":"test_client",
+    "requisition_title":"test_req_title",
+    "account":"AAAA_1234",
+    "candidate_email":"testEmail@123.com"
 },
 {
-    "requisition_id": "123",
-    "vendor_key": "test_vendor_key",
-    "status_detail": "Test status detail",
-    "status_level": "application",
-    "status_date": "2017-03-19T23:04:01Z",
-    "level_id": "test_level_id",
-    "status": "test_status",
-    "client": "test_client",
-    "account": "AAAA_1234",
-    "candidate_email": "testEmail@123.com"
+    "requisition_id":"123",
+    "vendor_key":"test_vendor_key",
+    "status_detail":"Test status detail",
+    "status_level":"application",
+    "status_date":"2017-03-19T23:04:01Z",
+    "level_id":"test_level_id",
+    "status":"test_status",
+    "client":"test_client",
+    "account":"AAAA_1234",
+    "candidate_email":"testEmail@123.com"
 }]
 ```

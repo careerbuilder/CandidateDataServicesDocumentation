@@ -1,8 +1,8 @@
 
-#Overview
+# Overview
 The candidate status API provides a key value store for storing ATS status values for a candidate.
 
-#Schema
+# Schema
 
 <table>
 <thead>
@@ -86,9 +86,9 @@ The candidate status API provides a key value store for storing ATS status value
 </tbody>
 </table>
 
-#Usage
+# Usage
 
-####Unique Key
+#### Unique Key
 
   - account
   - candidate_email
@@ -102,7 +102,7 @@ This assumes that we are:
   - Only storing 1 translation (TSR has translations for each status
     value)
 
-####Bullhorn
+#### Bullhorn
 
 Three possible status entries –
 candidate, jobsubmission, and placement.  It looks like placement can
@@ -114,7 +114,7 @@ a job requisition.
   - Candidate->Placement(s)-> JobOrder and Status
   - Candidate->Placement(s)->JobSubmission->JobOrder and Status
 
-####TEE
+#### TEE
 
 Candidate status and application
 status entries.
@@ -127,17 +127,17 @@ Second Interview, Third Interview, Testing, Offer, Hired, Rejected,
 Declined, Pipeline, Inactive.  Status is like not started, in progress,
 completed.
 
-####Campaign Mgt.
+#### Campaign Mgt.
 Status per campaign
 
-####TSR
+#### TSR
 Candidate status and application status entries (~4 translations per status)
 
-#Resource URI
+# Resource URI
 /Corporate/CandidateStatus
 
-#Actions
-##GET
+# Actions
+## GET
 
 Retrieve all statuses for a single email.
 
@@ -152,9 +152,9 @@ GET /Corporate/CandidateStatus/AAAA_1234/testEmail@123.com?results_per_page=15&s
 Sample result:
 ```json
 [{
-    "requisition_id": "1",
-    "vendor_key": "test_vendor_key",
-    "status_detail": "Test status detail",
+    "requisition_id":"1",
+    "vendor_key":"test_vendor_key",
+    "status_detail":"Test status detail",
     "status_level": "application",
     "status_date": "2017-03-19T23:04:01Z",
     "level_id": "test_level_id",
@@ -192,7 +192,7 @@ Sample result:
 }]
 ```
 
-##PUT
+## PUT
 Insert a status
 
 PUT /Corporate/CandidateStatus
@@ -244,7 +244,7 @@ Sample response
 "Created/updated status."
 ```
 
-##POST
+## POST
 Retrieve multiple emails or multiple requisition_ids
 
 POST /Corporate/CandidateStatus

@@ -12,11 +12,11 @@ Contents
 
 *This API is owned and maintained by CareerBuilder's Candidate Data Services team. Please contact this team for any questions or feedback regarding this API.*
 
-CareerBuilder's Candidate Upload API allows the caller to upload a candidate, their resume, and additional candidate information to Careerbuilder's MyCandidates application. The candidate is parsed, enriched, and indexed into the MyCandidates data repository.
+CareerBuilder's Candidate Upload API allows the caller to upload a candidate, their resume, and additional candidate information to Careerbuilder's MyCandidates application. The candidate is parsed, enriched, and indexed into the specified client's MyCandidates data repository.
 
 This endpoint is synchronous and provides immediate feedback if there are issues in the request. If the resume fails to parse properly the API creates a "contact card" of the most important information in your request.
 
-A Contact Card is a lean version of a candidate profile and is made up of the candidate's email and base64-encoded resume, along with name and plain-text resume if available. A contact card will not be parsed, and the resume text is stored for retrieval purposes only. A candidate record stored as a contact card can be converted into a full profile easily by fixing the errors in the original request and re-uploading via the API.
+A contact card is a lean version of a candidate profile and is made up of the candidate's email and base64-encoded resume, along with name and plain-text resume if available. A contact card will not be parsed, and the resume text is stored for retrieval purposes only. A candidate record stored as a contact card can be converted into a full profile easily by fixing the errors in the original request and re-uploading via the API.
 
 Only the most recent record for a candidate per vendor-client integration is indexed.
 
@@ -44,9 +44,11 @@ NOTE: With the exception of geography data, all information added in optional fi
 
 |**Parameter**|**Description**
 | --- | --- |
+|vendor_key|(Required) Key passed in to identify the ATS/vendor. Prefixed with “VK”
+|client_key|(Required) Key passed in to identify the client (i.e. account) to which the candidate record belongs. Prefixed with “CK”
+|base64_resume|(Required) Candidate’s resume file, encoded as a Base64 string. Acceptable file types are: .docx, .rtf, .doc, .txt, .wps, .odt, .wpd, .docm, and .pdf.
 |file_name|Name of the file to be uploaded via the upload API; if none is given, we will create one from the candidate's name.
 |plain_text_resume|Text representation of resume. The text can be formatted or contain HTML. Must be greater than 100 characters in length.
-|base64_resume|(Required) Candidate’s resume file, encoded as a Base64 string. Acceptable file types are: .docx, .rtf, .doc, .txt, .wps, .odt, .wpd, .docm, and .pdf.
 |candidate_name|Candidate’s full name. 64 characters max.
 |email|Candidate email. This email overrides any parsed information. Must be a valid email address 'example@domain.tld'. Max 128 characters.
 |phone_number|Phone number of the candidate
@@ -65,7 +67,6 @@ NOTE: With the exception of geography data, all information added in optional fi
 |us_security_clearance|Indicates whether the candidate has a US security clearance.
 |last_modified_date|The last date the candidate record was modified. Date must be formatted as `yyyy-MM-dd`.
 |languages| Languages in which the candidate is fluent. Provided in ISO 639-1 two letter language codes as an array of strings. Possible values: en(English), zh(Chinese), cs(Czech), da(Danish), nl(Dutch), et(Estonian), fi(Finnish), hi(Hindi), fr(French), de(German), el(Greek), he(Hebrew), hu(Hungarian), is(Icelandic), it(Italian), ja(Japanese), ko(Korean), lv(Latvian), lt(Lithuanian), no(Norwegian), pl(Polish), pt(Portuguese), ro(Romanian), ru(Russian), es(Spanish), or sv(Swedish).
-|vendor_key|(Required) Key passed in to identify the ATS/vendor. Prefixed with “VK”
 |candidate_url|URL linking back to the original source’s version of the candidate. max 1024 characters.
 |should_export_to_tn| (Boolean) Should this candidate be added to the client’s Talent Network? The client must have an active TN and the vendor must be configured for export to TN.
 |talent_network_did|Used in conjunction with "should_export_to_tn". This allows the user to specify what TalentNetworkDID they want this candidate sent to. If not specified, we look up the TalentNetworkDID based on the AccountDID.

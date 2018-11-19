@@ -50,9 +50,9 @@ and file types.
 | dateTimeFormat | String | The date time format used in the MostRecentActivity and ActivityHistory fields for the data. Must be compatible with java DateTimeFormat.ForPattern method. |
 | filesAreZipped | Boolean | Whether LOCAL indexed resumes are zipped. If set to true, the integration will attempt to unzip the resumes first. |
 | ftpInfo | JSON Object | Fields that configure the FTP pull importType. |
-| ftpInfo.HostUrl | The host URL of the FTP Server for the FTP pull importType. |
-| ftpInfo.Port | The port of the FTP server to attempt to connect to for the FTP pull importType. |
-| ftpInfo.Path | The path to change directory to to locate files on the FTP server for the FTP pull importType. |
+| ftpInfo.HostUrl | String | The host URL of the FTP Server for the FTP pull importType. |
+| ftpInfo.Port | Integer | The port of the FTP server to attempt to connect to for the FTP pull importType. |
+| ftpInfo.Path | String | The path to change directory to to locate files on the FTP server for the FTP pull importType. |
 
 
 ### Example configuration

@@ -1,6 +1,6 @@
 ### Overview 
 
-FTP Integrations can be configured for both push and pull types. The main configuration is a relatively simple json file which 
+FTP Integrations can be configured for both push and pull FTP and API types. The main configuration is a relatively simple json file which 
 manages identifying information of the client, file to field mappings, where to send the information to be uploaded to MyCandidates,
 and file types. 
 
@@ -23,7 +23,7 @@ and file types.
 | mappings.contactName | MultiField JSON Object | Determines how the integration should parse the contact name from the file. |
 | mappings.contactName.fields | List of String | The fields to parse the contact name from. If XML, the list of attributes or tags. If CSV, the string list of column numbers (0 indexed). |
 | mappings.contactName.displayDelimiter | String | The delimiter which will join the fields specified in the above box when the contact name is parsed for ingestion to MyCandidates. |
-| mappings.tags | MultieField JSON Object | Determines how the integration should parse the tags field from the file. See the ContactName field for further explanation of the Multifield structure. |
+| mappings.tags | List of MultiField JSON Object | Determines how the integration should parse the one or more tags fields from the file. See the ContactName field for further explanation of the Multifield structure. |
 | mappings.jobReqID | String | If XML, the attribute or tag to use for the job requisition id MyCandidates field. If a CSV, the string of the column number (0 indexed) to use for the job requisition id field. |
 | mappings.activeHistory | String | If XML, the attribute or tag to use for the active history MyCandidates field. If a CSV, the string of the column number (0 indexed) to use for the active history field. |
 | mappings.phoneNumber | String | If XML, the attribute or tag to use for the phone MyCandidates field. If a CSV, the string of the column number (0 indexed) to use for the phone number field. |
@@ -33,12 +33,26 @@ and file types.
 | mappings.applicationJobTitle | String | If XML, the attribute or tag to use for the application job title MyCandidates field. If a CSV, the string of the column number (0 indexed) to use for the application job title field. |
 | mappings.applicationJobSource | String | If XML, the attribute or tag to use for the application job source MyCandidates field. If a CSV, the string of the column number (0 indexed) to use for the application job source field. |
 | mappings.mostRecentActivity | String | If XML, the attribute or tag to use for the most recent activity MyCandidates field. If a CSV, the string of the column number (0 indexed) to use for the most recent activity field. |
-
-
-
-
-
-
+| apiInfo | JSON Object | Contains field related to where to upload candidates |
+| apiInfo.CandidateEndpoint | String | The endpoint to retrieve the candidates from, if the importType is API|
+| apiInfo.HostUrl | String | The host for the candidate endpoint if the importType is API |
+| apiInfo.Password | String | The password for Basic Authentication if the importType is API |
+| apiInfo.Username | String | the username for Basic Authentication if the importType is API |
+| apiInfo.contentType | ContentType Enum integer | One of XML (1) or JSON (2). Used to parse the response if the importType is API |
+| importType | ImportType enum integer | One of FTP (1) , API (2) or LOCAL (3). Determines the import type of the configuration |
+| fileType | FileType enum integer | One of XML (1) or CSV (2). Determines the file type of imported candidates |
+| filePath | String | If the importType is FTP, where to save candidates before upload. If the importType is LOCAL, where to look for candidates on the local server. For push FTP to CB's FTP server, this will typically be /tmp/processing/<FTP account name>  |
+| filesAreIndexed | Boolean | Determines whether to look for resume files outside the main data file if the importType is LOCAL. If true, the mappings.fileName field will determine which file resume corresponds to that document in the "pathOfIndexedResumeFiles" directory |
+| pathOfIndexedResumeFiles | String | Directory path to look for resume files when the importType is LOCAL. For push FTP to CB's FTP server, this will typically be /tmp/processing/<FTP account name> |
+| credentials | JSON Object | Contains fields that determine how to connect to remote FTP servers if the importType is FTP. |
+| credentials.username | String | Username for connecting to the FTP server if the importType is FTP. |
+| credentials.password | String | Password for connecting to the FTP server if the importType is FTP. |
+| dateTimeFormat | String | The date time format used in the MostRecentActivity and ActivityHistory fields for the data. Must be compatible with java DateTimeFormat.ForPattern method. |
+| filesAreZipped | Boolean | Whether LOCAL indexed resumes are zipped. If set to true, the integration will attempt to unzip the resumes first. |
+| ftpInfo | JSON Object | Fields that configure the FTP pull importType. |
+| ftpInfo.HostUrl | The host URL of the FTP Server for the FTP pull importType. |
+| ftpInfo.Port | The port of the FTP server to attempt to connect to for the FTP pull importType. |
+| ftpInfo.Path | The path to change directory to to locate files on the FTP server for the FTP pull importType. |
 
 
 ### Example configuration
@@ -64,13 +78,6 @@ and file types.
     },
     "jobReqID": "0",
     "applicationJobSource": "10"
-  },
-  "apiInfo": {
-    "CandidateEndpoint": "mysupply/candidate/upload",
-    "HostUrl": "https://api.careerbuilder.com"
-  },
-  "csvInfo": {
-    "dataSurroundedByDoubleQuotes": false
   },
   "importType": 3,
   "fileType": 2,

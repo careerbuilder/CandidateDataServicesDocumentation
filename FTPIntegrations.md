@@ -41,9 +41,9 @@ and file types.
 | apiInfo.contentType | ContentType enum integer | One of XML (1) or JSON (2). Used to parse the response if the importType is API |
 | importType | ImportType enum integer | One of FTP (1) , API (2) or LOCAL (3). Determines the import type of the configuration. FTP is equivalent to FTP pull, while LOCAL is equivalent to FTP push.|
 | fileType | FileType enum integer | One of XML (1) or CSV (2). Determines the file type of imported candidates |
-| filePath | String | If the importType is FTP, where to save candidates before upload. If the importType is LOCAL, where to look for candidates on the local server. For push FTP to CB's FTP server, this will typically be /tmp/processing/<FTP account name>  |
+| filePath | String | If the importType is FTP, where to save candidates before upload. If the importType is LOCAL, where to look for candidates on the local server. For push FTP to CB's FTP server, this will typically be /tmp/processing/\<FTP account name\>  |
 | filesAreIndexed | Boolean | Determines whether to look for resume files outside the main data file if the importType is LOCAL. If true, the mappings.fileName field will determine which file resume corresponds to that document in the "pathOfIndexedResumeFiles" directory |
-| pathOfIndexedResumeFiles | String | Directory path to look for resume files when the importType is LOCAL. For push FTP to CB's FTP server, this will typically be /tmp/processing/<FTP account name> |
+| pathOfIndexedResumeFiles | String | Directory path to look for resume files when the importType is LOCAL. For push FTP to CB's FTP server, this will typically be /tmp/processing/\<FTP account name\> |
 | credentials | JSON Object | Contains fields that determine how to connect to remote FTP servers if the importType is FTP. |
 | credentials.username | String | Username for connecting to the FTP server if the importType is FTP. |
 | credentials.password | String | Password for connecting to the FTP server if the importType is FTP. |

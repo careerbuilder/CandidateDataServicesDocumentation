@@ -1,6 +1,6 @@
 # Document API
 
-```sh
+```
 /corporate/candidatesearch/document
 ```
 ## Update Document
@@ -358,7 +358,7 @@ Customer Key and Document Key are required to search for a single document. Para
 |ErrorReturnedFromSolrSearch|string[]||
 
 **Sample request:**
-```sh
+```
 /corporate/candidatesearch/document?customer_key=CSTESTSQUIRRELY00001&document_id=3F1AASDQWAS123123
 ```
 
@@ -462,7 +462,7 @@ Customer Key and Document Key are required. Must set Content-Type = application/
 |ErrorReturnedFromSolrSearch|string[]||
 
 **Sample request:**
-```sh
+```
 /corporate/candidatesearch/document?customer_key=CSTESTSQUIRRELY00001&document_id=3F1AASDQWAS123123
 ```
 

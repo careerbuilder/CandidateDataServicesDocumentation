@@ -48,7 +48,7 @@ Each step has a status.  Step is like New, Reviewed, First Interview, Second Int
 
 **Campaign Mgt.:** Status per campaign.
 **TSR:** Candidate status and application status entries (~4 translations per status)
-```sh
+```
 Endpoints: /Corporate/CandidateStatus
 ```
 ## Retrieve all statuses for a single email
@@ -61,7 +61,7 @@ Optional query string parameters:
     - only statuses that have status dates after the given status_date will be returned.
 
 **Sample request:** 
-```sh
+```
 /Corporate/CandidateStatus/AAAA_1234/testEmail@123.com?results_per_page=15&status_date=2017-02-18T19:04:01Z
 ```
 **Sample response:** 
@@ -157,7 +157,7 @@ Sample request 2 (candidate):
 ```
 
 **Sample response:** (Note: I will most likely be expanding this response but it has not been a priority)
-```sh
+```
 "Created/updated status."
 ```
 

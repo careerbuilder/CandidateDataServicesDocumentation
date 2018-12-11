@@ -49,7 +49,7 @@ Endpoints: /Corporate/CandidateStatus
 ```
 ## Retrieve all statuses for a single email
 **Method:** GET
-**URL:** /Corporate/CandidateStatus/*your account here*/*candidate_email here*
+**URL:** [https://api.careerbuilder.com/corporate/CandidateStatus/*your account here*/*candidate_email here*](https://apimanagement.cbplatform.link/#routes/tester?preURL=https%3A%2F%2Fwwwtest.api.careerbuilder.com%2F&postURL=corporate%2FCandidateStatus%2FAAAA_1234%2FtestEmail%40123.com%3Fresults_per_page%3D15%26status_date%3D2017-02-18T19%3A04%3A01Z&method=get&contentType=application%2Fjson&acceptType=application%2Fjson&version=default&region=staging&flow=client_credentials&userDid=&accountDid=&headers=&body=)
 Optional query string parameters:
   - Results_per_page
     - Defaults to 10
@@ -57,9 +57,8 @@ Optional query string parameters:
     - only statuses that have status dates after the given status_date will be returned.
 
 **Sample request:** 
-```
-/Corporate/CandidateStatus/AAAA_1234/testEmail@123.com?results_per_page=15&status_date=2017-02-18T19:04:01Z
-```
+[https://api.careerbuilder.com/corporate/CandidateStatus/AAAA_1234/testEmail@123.com?results_per_page=15&status_date=2017-02-18T19:04:01Z](https://apimanagement.cbplatform.link/#routes/tester?preURL=https%3A%2F%2Fwwwtest.api.careerbuilder.com%2F&postURL=corporate%2FCandidateStatus%2FAAAA_1234%2FtestEmail%40123.com%3Fresults_per_page%3D15%26status_date%3D2017-02-18T19%3A04%3A01Z&method=get&contentType=application%2Fjson&acceptType=application%2Fjson&version=default&region=staging&flow=client_credentials&userDid=&accountDid=&headers=&body=)
+
 **Sample response:** 
 ```json
 [  
@@ -108,7 +107,7 @@ Optional query string parameters:
 ## Insert a status
 
 **Method:** PUT
-**URL:** /Corporate/CandidateStatus
+**URL:** [https://api.careerbuilder.com/corporate/CandidateStatus](https://apimanagement.cbplatform.link/#routes/tester?preURL=https%3A%2F%2Fwwwtest.api.careerbuilder.com%2F&postURL=corporate%2FCandidateStatus&method=put&contentType=application%2Fjson&acceptType=application%2Fjson&version=default&region=staging&flow=client_credentials&userDid=&accountDid=&headers=&body={++%0D%0A+++%22account%22%3A%22AAAA_1234%22%2C%0D%0A+++%22candidate_email%22%3A%22testEmail%40123.com%22%2C%0D%0A+++%22vendor_key%22%3A%22test_vendor_key%22%2C%0D%0A+++%22client%22%3A%22test_client%22%2C%0D%0A+++%22requisition_id%22%3A%22123%22%2C%0D%0A+++%22level_id%22%3A%22test_level_id%22%2C%0D%0A+++%22status%22%3A%22test_status%22%2C%0D%0A+++%22status_date%22%3A%222017-03-19T19%3A04%3A01Z%22%2C%0D%0A+++%22status_level%22%3A%22application%22%2C%0D%0A+++%22status_detail%22%3A%22Test+status+detail%22%0D%0A})
 
 Requirements: 
   - account
@@ -120,6 +119,9 @@ Requirements:
     - if application: requisition_id is required. Requisition_title is still optional.
 
 **Sample requests:**
+```
+https://www.api.careerbuilder.com/corporate/CandidateStatus
+```
 Sample request 1 (application):
 ```json
 {  
@@ -160,7 +162,7 @@ Sample request 2 (candidate):
 ## Retrieve multiple emails or multiple requisition_ids
 
 **Method:** POST
-**URL:** /Corporate/CandidateStatus
+**URL:** [https://api.careerbuilder.com/corporate/CandidateStatus](https://apimanagement.cbplatform.link/#routes/tester?preURL=https%3A%2F%2Fwwwtest.api.careerbuilder.com%2F&postURL=corporate%2FCandidateStatus&method=post&contentType=application%2Fjson&acceptType=application%2Fjson&version=default&region=staging&flow=client_credentials&userDid=&accountDid=&headers=&body={++%0D%0A+++%22account%22%3A%22aaaa_1234%22%2C%0D%0A+++%22candidate_email%22%3A[++%0D%0A++++++%22testEmail%40123.com%22%2C%0D%0A++++++%22testEmail%401234.com%22%0D%0A+++]%2C%0D%0A+++%22status_date%22%3A%222017-03-18T19%3A04%3A01Z%22%0D%0A})
 
 Requirements:
   - account
@@ -170,6 +172,9 @@ Optional:
     - only statuses that have status dates after the given status_date will be returned.
 
 **Sample requests:**
+```
+https://www.api.careerbuilder.com/corporate/CandidateStatus
+```
 Sample request 1:
 ```json
 {  
@@ -196,7 +201,6 @@ Sample request 2:
 ```
 
 **Sample response:**
-
 ```json
 [  
    {  

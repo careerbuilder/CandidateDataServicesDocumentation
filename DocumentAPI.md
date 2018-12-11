@@ -6,7 +6,8 @@ https://api.careerbuilder.com/corporate/candidatesearch/document
 ## Update Document
 
 **Method:** POST
-**URL:** /corporate/candidatesearch/document
+**URL:** [https://api.careerbuilder.com/corporate/candidatesearch/document](https://apimanagement.cbplatform.link/#routes/tester?preURL=https%3A%2F%2Fwwwtest.api.careerbuilder.com%2F&postURL=corporate%2Fcandidatesearch%2Fdocument&method=post&contentType=application%2Fjson&acceptType=application%2Fjson&version=default&region=staging&flow=client_credentials&userDid=&accountDid=&headers=&body={%0D%0A++%22document_id%22%3A+%223F1AASDQWAS123123%22%2C%0D%0A++%22update_fields%22%3A+[{%0D%0A++++%22name%22%3A+%22skill_list%22%2C%0D%0A++++%22value%22%3A+[%22Java%22]%0D%0A++}]%2C%0D%0A++%22customer_key%22%3A+%22CKHT82M6S1Y6DRRBSQLY%22%0D%0A})
+
 Optional query string parameters:
   - document_id, if do cument if is not provided email should be provided
   - email, if email is not provided document_id should be provided
@@ -117,7 +118,7 @@ Optional query string parameters:
 ## Create Document
 
 **Method:** PUT
-**URL:** https://api.careerbuilder.com/corporate/candidatesearch/document
+**URL:** [https://api.careerbuilder.com/corporate/candidatesearch/document](https://apimanagement.cbplatform.link/#routes/tester?preURL=https%3A%2F%2Fwwwtest.api.careerbuilder.com%2F&postURL=corporate%2Fcandidatesearch%2Fdocument&method=put&contentType=application%2Fjson&acceptType=application%2Fjson&version=default&region=staging&flow=client_credentials&userDid=&accountDid=&headers=&body={%0D%0A++%22document_id%22%3A+%223F1AASDQWAS123123%22%2C%0D%0A++%22email%22%3A+%22test.test%40test.com%22%2C%0D%0A++%22first_name%22%3A+%22test%22%2C%0D%0A++%22last_name%22%3A+%22test%22%2C%0D%0A++%22country%22%3A+%22US%22%2C%0D%0A++%22resume_description%22%3A+%22Test+for+Document+Creation%22%2C%0D%0A++%22skill_list%22%3A+[%0D%0A++++%22Java%22%0D%0A++]%2C%0D%0A++%22customer_key%22%3A+%22CKHT82M6S1Y6DRRBSQLY%22%0D%0A})
 Optional query string parameters:
   - request_id
 
@@ -317,7 +318,7 @@ Handles Create Request. Must set Content-Type = application/json in header. Para
 Customer Key and Document Key are required to search for a single document. Parameter type: QUERY
 
 **Method:** GET
-**URL:** https://api.careerbuilder.com/corporate/candidatesearch/document?**Parameters**
+**URL:** [https://api.careerbuilder.com/corporate/candidatesearch/document?**Parameters**](https://apimanagement.cbplatform.link/#routes/tester?preURL=https%3A%2F%2Fwwwtest.api.careerbuilder.com%2F&postURL=corporate%2Fcandidatesearch%2Fdocument%3Fcustomer_key%3DCKHT82M6S1Y6DRRBSQLY%26document_id%3D3F1AASDQWAS123123&method=get&contentType=application%2Fjson&acceptType=application%2Fjson&version=default&region=staging&flow=client_credentials&userDid=&accountDid=&headers=&body=)
 
 ### Parameter
 
@@ -420,7 +421,7 @@ https://api.careerbuilder.com/corporate/candidatesearch/document?customer_key=CS
 Customer Key and Document Key are required. Must set Content-Type = application/json in header. Parameter type: QUERY
 
 **Method:** DELETE
-**URL:** https://api.careerbuilder.com/corporate/candidatesearch/document?**Parameters**
+**URL:** [https://api.careerbuilder.com/corporate/candidatesearch/document?**Parameters**](https://apimanagement.cbplatform.link/#routes/tester?preURL=https%3A%2F%2Fwwwtest.api.careerbuilder.com%2F&postURL=corporate%2Fcandidatesearch%2Fdocument%3Fcustomer_key%3DCKHT82M6S1Y6DRRBSQLY%26document_id%3D3F1AASDQWAS123123&method=delete&contentType=application%2Fjson&acceptType=application%2Fjson&version=default&region=staging&flow=client_credentials&userDid=&accountDid=&headers=&body=)
 
 ### Parameter
 

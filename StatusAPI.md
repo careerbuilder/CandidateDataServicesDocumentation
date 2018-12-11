@@ -45,7 +45,7 @@ Each step has a status.  Step is like New, Reviewed, First Interview, Second Int
 **Campaign Mgt.:** Status per campaign.
 **TSR:** Candidate status and application status entries (~4 translations per status)
 ```
-Endpoints: /Corporate/CandidateStatus
+Endpoints: https://api.careerbuilder.com/corporate/CandidateStatus
 ```
 ## Retrieve all statuses for a single email
 **Method:** GET

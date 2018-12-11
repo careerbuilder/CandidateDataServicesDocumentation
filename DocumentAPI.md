@@ -1,7 +1,7 @@
 # Document API
 
 ```
-/corporate/candidatesearch/document
+https://api.careerbuilder.com/corporate/candidatesearch/document
 ```
 ## Update Document
 
@@ -11,7 +11,6 @@ Optional query string parameters:
   - document_id, if do cument if is not provided email should be provided
   - email, if email is not provided document_id should be provided
   - request_id
-  - pool
 
 ### Parameter
 
@@ -24,7 +23,6 @@ Optional query string parameters:
 |value|string|Value of the field provided in the name, example: test@test.com|
 |customer_key|string|The customer Key|
 |request_id|string|Request Identificator|
-|pool|string|Name of the pool that will be used, by default it will use privatecandidates|
 
 ### Request Body
 
@@ -32,7 +30,6 @@ Optional query string parameters:
  {
   "document_id": "",
   "email": "",
-  "pool": "",
   "update_fields": [
     {
       "name": "",
@@ -120,7 +117,7 @@ Optional query string parameters:
 ## Create Document
 
 **Method:** PUT
-**URL:** /corporate/candidatesearch/document
+**URL:** https://api.careerbuilder.com/corporate/candidatesearch/document
 Optional query string parameters:
   - request_id
 
@@ -267,7 +264,6 @@ Handles Create Request. Must set Content-Type = application/json in header. Para
   "last_name": "test",
   "country": "US",
   "resume_description": "Test for Document Creation",
-  "pool": "privatecandidates",
   "skill_list": [
     "Java"
   ],
@@ -322,7 +318,7 @@ Handles Create Request. Must set Content-Type = application/json in header. Para
 Customer Key and Document Key are required to search for a single document. Parameter type: QUERY
 
 **Method:** GET
-**URL:** /corporate/candidatesearch/document?**Parameters**
+**URL:** https://api.careerbuilder.com/corporate/candidatesearch/document?**Parameters**
 
 ### Parameter
 
@@ -359,7 +355,7 @@ Customer Key and Document Key are required to search for a single document. Para
 
 **Sample request:**
 ```
-/corporate/candidatesearch/document?customer_key=CSTESTSQUIRRELY00001&document_id=3F1AASDQWAS123123
+https://api.careerbuilder.com/corporate/candidatesearch/document?customer_key=CSTESTSQUIRRELY00001&document_id=3F1AASDQWAS123123
 ```
 
 **Sample response:**
@@ -425,7 +421,7 @@ Customer Key and Document Key are required to search for a single document. Para
 Customer Key and Document Key are required. Must set Content-Type = application/json in header. Parameter type: QUERY
 
 **Method:** DELETE
-**URL:** /corporate/candidatesearch/document?**Parameters**
+**URL:** https://api.careerbuilder.com/corporate/candidatesearch/document?**Parameters**
 
 ### Parameter
 
@@ -463,7 +459,7 @@ Customer Key and Document Key are required. Must set Content-Type = application/
 
 **Sample request:**
 ```
-/corporate/candidatesearch/document?customer_key=CSTESTSQUIRRELY00001&document_id=3F1AASDQWAS123123
+https://api.careerbuilder.com/corporate/candidatesearch/document?customer_key=CSTESTSQUIRRELY00001&document_id=3F1AASDQWAS123123
 ```
 
 **Sample response:**

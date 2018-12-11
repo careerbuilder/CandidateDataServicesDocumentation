@@ -12,15 +12,15 @@ Contents
 | Field | Req’d | Type | Comment |
 | ------ | ------ | ------ | ------ |
 | account | Y | String(20) | CB Account DID |
-| candidate_email | Y | String(255) | 255 is not a typo. |
-| vendor_key  | N | String(20) | Type of source system(Bullhorn, Luceo, TEE…) |
+| candidate_email | Y | String(255) | Candidate Email. |
+| vendor_key  | N | String(20) | Key passed in to identify the vendor |
 | client | N | String(20) | System calling this service (MyCandidates, CandidateStream) |
 | requisition_id | N | String(1024) | Job this status applies to (can be null) |
 | requisition_title | N | String(256) |  |
 | level_id | N | String(64) | ID of Candidate/Application |
 | status | Y | String(100) | The raw status as recorded by source system |
-| status_date | Y | Date/time | UTC Date/time of status changeFormat: YYYY-MM-DD THH:MM:SSZ 1776-07-04T19:04:01Z |
-| status_level | Y | String(20) | Candidate/Application |
+| status_date | Y | Date/time | UTC Date/time of status change format: YYYY-MM-DD THH:MM:SSZ 1776-07-04T19:04:01Z |
+| status_level | Y | String(20) | Possible values for Status Level: Application and Candidate, Application requires requisition_id and Candidate does not require requisition_id and requisition_title |
 | status_detail | N | String(4096) | Free form string  |
 
 #### Unique Key:
@@ -30,10 +30,6 @@ Contents
   - requisition_id
   - status_level
   
-This assumes that we are:
-  - Combining step and status for TEE
-  - Only storing 1 translation (TSR has translations for each status value)
-
 **Bullhorn:** Three possible status entries – candidate, jobsubmission, and placement.  It looks like placement can replace jobsubmission status, so that we could just have one status for a job requisition.
   - Candidate->Status
   - Candidate->JobSubmission(s)->JobOrder and Status

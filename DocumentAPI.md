@@ -301,7 +301,6 @@ Handles Create Request. Must set Content-Type = application/json in header. Para
       "company_experience_list": [],
       "education_list": [],
       "custom_field_list": [],
-      "pool": "privatecandidates",
       "customer_key": "CSTESTSQUIRRELY00001",
       "request_id": "CSREQ006FZ6NT8VC310B5VX"
     },

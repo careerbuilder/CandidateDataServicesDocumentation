@@ -12,6 +12,7 @@ Used to create and manipulate Candidate Data.
 * [Client API](/ClientAPI.md)
 * Candidate Status API
 * [Recruiter Actions API](/ActionsAPI.md)
+* [Status API](/StatusAPI.md)
 
 ## Candidate Search
 

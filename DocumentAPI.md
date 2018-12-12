@@ -1,25 +1,36 @@
 # Document API
 
-/Document
+```
+https://api.careerbuilder.com/corporate/candidatesearch/document
+```
+## Update Document
 
-## POST
+**Method:** POST
+**URL:** [https://api.careerbuilder.com/corporate/candidatesearch/document](https://apimanagement.cbplatform.link/#routes/tester?preURL=https%3A%2F%2Fwwwtest.api.careerbuilder.com%2F&postURL=corporate%2Fcandidatesearch%2Fdocument&method=post&contentType=application%2Fjson&acceptType=application%2Fjson&version=default&region=staging&flow=client_credentials&userDid=&accountDid=&headers=&body={%0D%0A++%22document_id%22%3A+%223F1AASDQWAS123123%22%2C%0D%0A++%22update_fields%22%3A+[{%0D%0A++++%22name%22%3A+%22skill_list%22%2C%0D%0A++++%22value%22%3A+[%22Java%22]%0D%0A++}]%2C%0D%0A++%22customer_key%22%3A+%22CKHT82M6S1Y6DRRBSQLY%22%0D%0A})
 
-Handles update Request. Must set Content-Type = application/json in header. Parameter type: BODY
+Optional query string parameters:
+  - document_id, if do cument if is not provided email should be provided
+  - email, if email is not provided document_id should be provided
+  - request_id
 
 ### Parameter
 
 |Field|Type|Description|
 |--- |--- |--- |
-|document_id|string||
-|update_fields|UpdateField[]||
-|name|string||
-|value|string||
-|customer_key|string||
-|request_id optional|string||
+|document_id|string|Document identificator. MaxLength: 50|
+|email|string|Email that will be used to retrieve documents that belong to that email. Max 128 characters.|
+|update_fields|UpdateField[]|Array that contains the fields that will be updated|
+|name|string|Name of the field to be updated, example: email|
+|value|string|Value of the field provided in the name, example: test@test.com|
+|customer_key|string|The customer Key|
+|request_id|string|Request Identificator|
+
+### Request Body
 
 ```json
  {
   "document_id": "",
+  "email": "",
   "update_fields": [
     {
       "name": "",
@@ -33,7 +44,6 @@ Handles update Request. Must set Content-Type = application/json in header. Para
 
 ### Response
 
-Success 200
 
 |Field|Type|Description|
 |--- |--- |--- |
@@ -59,7 +69,58 @@ Success 200
 |SearchResultDIDs|string[]||
 |ErrorReturnedFromSolrSearch|string[]||
 
-## PUT
+**Sample request:**
+```json
+{
+  "document_id": "3F1AASDQWAS123123",
+  "update_fields": [{
+    "name": "skill_list",
+    "value": ["Java"]
+  }],
+  "customer_key": "CSTESTSQUIRRELY00001"
+}
+```
+
+**Sample response:**
+
+```json
+{
+  "data": {
+    "status_message": "Customer was successfully updated.",
+    "status_code": 200
+  },
+  "timing": {
+    "time_received": "2016-12-06T19:41:46.7711185Z",
+    "time_elapsed": 14.2441964
+  },
+  "forensics": {
+    "input": {
+      "document_id": "3F1AASDQWAS123123",
+      "update_fields": [
+        {
+          "name": "skill_list",
+          "value": [
+            "Java"
+          ]
+        }
+      ],
+      "customer_key": "CSTESTSQUIRRELY00001",
+      "request_id": "CSREQ0061N65B5W8X043C5V"
+    },
+    "internal_forensics": {
+      "StatusCodeReturnedFromSearchCore": 0
+    }
+  }
+}
+```
+
+
+## Create Document
+
+**Method:** PUT
+**URL:** [https://api.careerbuilder.com/corporate/candidatesearch/document](https://apimanagement.cbplatform.link/#routes/tester?preURL=https%3A%2F%2Fwwwtest.api.careerbuilder.com%2F&postURL=corporate%2Fcandidatesearch%2Fdocument&method=put&contentType=application%2Fjson&acceptType=application%2Fjson&version=default&region=staging&flow=client_credentials&userDid=&accountDid=&headers=&body={%0D%0A++%22document_id%22%3A+%223F1AASDQWAS123123%22%2C%0D%0A++%22email%22%3A+%22test.test%40test.com%22%2C%0D%0A++%22first_name%22%3A+%22test%22%2C%0D%0A++%22last_name%22%3A+%22test%22%2C%0D%0A++%22country%22%3A+%22US%22%2C%0D%0A++%22resume_description%22%3A+%22Test+for+Document+Creation%22%2C%0D%0A++%22skill_list%22%3A+[%0D%0A++++%22Java%22%0D%0A++]%2C%0D%0A++%22customer_key%22%3A+%22CKHT82M6S1Y6DRRBSQLY%22%0D%0A})
+Optional query string parameters:
+  - request_id
 
 Handles Create Request. Must set Content-Type = application/json in header. Parameter type: BODY. Custom fields can be passed like standard fields. Please look at example.
 
@@ -109,7 +170,7 @@ Handles Create Request. Must set Content-Type = application/json in header. Para
 |graduation_date|string||
 |customer_key|string||
 |request_id optional|string||
-
+### Request Body
 ```json
 {
   "document_id": "",
@@ -170,8 +231,6 @@ Handles Create Request. Must set Content-Type = application/json in header. Para
 
 ### Response
 
-Success 200
-
 |Field|Type|Description|
 |--- |--- |--- |
 |string||DID|
@@ -197,10 +256,69 @@ Success 200
 |SearchResultDIDs|string[]||
 |ErrorReturnedFromSolrSearch|string[]||
 
+**Sample request:**
+```json
+{
+  "document_id": "3F1AASDQWAS123123",
+  "email": "test.test@test.com",
+  "first_name": "test",
+  "last_name": "test",
+  "country": "US",
+  "resume_description": "Test for Document Creation",
+  "skill_list": [
+    "Java"
+  ],
+  "customer_key": "CSTESTSQUIRRELY00001"
+}
+```
 
-## GET
+**Sample response:**
+
+```json
+{
+  "data": {
+    "status_message": "Applicant was successfully indexed.",
+    "status_code": 200
+  },
+  "timing": {
+    "time_received": "2018-12-06T19:47:38.1486562Z",
+    "time_elapsed": 9.1482392
+  },
+  "forensics": {
+    "input": {
+      "document_id": "3F1AASDQWAS123123",
+      "email": "test.test@test.com",
+      "first_name": "test",
+      "last_name": "test",
+      "latitude": 0.0,
+      "longitude": 0.0,
+      "country": "US",
+      "total_years_experience": 0.0,
+      "resume_description": "Test for Document Creation",
+      "skill_list": [
+        "Java"
+      ],
+      "priority": 0,
+      "company_experience_list": [],
+      "education_list": [],
+      "custom_field_list": [],
+      "customer_key": "CSTESTSQUIRRELY00001",
+      "request_id": "CSREQ006FZ6NT8VC310B5VX"
+    },
+    "internal_forensics": {
+      "StatusCodeReturnedFromSearchCore": 0
+    }
+  },
+  "CompositeID": "CSTESTSQUIRRELY00001|3F1AASDQWAS123123"
+}
+```
+
+## Retrieve a document
 
 Customer Key and Document Key are required to search for a single document. Parameter type: QUERY
+
+**Method:** GET
+**URL:** [https://api.careerbuilder.com/corporate/candidatesearch/document?**Parameters**](https://apimanagement.cbplatform.link/#routes/tester?preURL=https%3A%2F%2Fwwwtest.api.careerbuilder.com%2F&postURL=corporate%2Fcandidatesearch%2Fdocument%3Fcustomer_key%3DCKHT82M6S1Y6DRRBSQLY%26document_id%3D3F1AASDQWAS123123&method=get&contentType=application%2Fjson&acceptType=application%2Fjson&version=default&region=staging&flow=client_credentials&userDid=&accountDid=&headers=&body=)
 
 ### Parameter
 
@@ -209,9 +327,7 @@ Customer Key and Document Key are required to search for a single document. Para
 |customer_key|string||
 |document_id|string||
 
-### Response
-
-Success 200
+### Response Body
 
 |Field|Type|Description|
 |--- |--- |--- |
@@ -237,9 +353,75 @@ Success 200
 |SearchResultDIDs|string[]||
 |ErrorReturnedFromSolrSearch|string[]||
 
-## DELETE
+**Sample request:**
+```
+https://api.careerbuilder.com/corporate/candidatesearch/document?customer_key=CSTESTSQUIRRELY00001&document_id=3F1AASDQWAS123123
+```
+
+**Sample response:**
+
+```json
+{
+  "data": {
+    "document": {
+      "customer_key": "CSTESTSQUIRRELY00001",
+      "document_id": "3F1AASDQWAS123123",
+      "email": "test.test@test.com",
+      "first_name": "test",
+      "last_name": "test",
+      "address_1": "",
+      "city": "",
+      "admin_area_1": "",
+      "postal_code": "",
+      "latitude": 0.00000,
+      "longitude": 0.00000,
+      "country": "US",
+      "phone": "",
+      "currently_employed": "",
+      "total_years_experience": 0.00000,
+      "resume_description": "Test for Document Creation",
+      "activity_history": "",
+      "skill_list": "Java",
+      "education_list": [],
+      "company_experience_list": []
+    },
+    "status_code": 200
+  },
+  "timing": {
+    "time_received": "2018-12-06T19:54:33.6089440Z",
+    "time_elapsed": 2.7219459
+  },
+  "forensics": {
+    "input": {
+      "radius": 0.0,
+      "enable_multi_facet": false,
+      "start_page": 0,
+      "results_per_page": 10,
+      "group_by_candidate": false,
+      "group_by_candidate_limit": 1,
+      "by_candidate": false,
+      "indecisive_facets": false,
+      "debug": false,
+      "show_reasons": false,
+      "sort_by_distance": false,
+      "solr_score": false,
+      "semantic": false,
+      "customer_key": "CSTESTSQUIRRELY00001",
+      "request_id": "CSREQ003TW6Z58R03KXL38P"
+    },
+    "internal_forensics": {
+      "StatusCodeReturnedFromSearchCore": 0
+    }
+  }
+}
+```
+
+## Delete a Document
 
 Customer Key and Document Key are required. Must set Content-Type = application/json in header. Parameter type: QUERY
+
+**Method:** DELETE
+**URL:** [https://api.careerbuilder.com/corporate/candidatesearch/document?**Parameters**](https://apimanagement.cbplatform.link/#routes/tester?preURL=https%3A%2F%2Fwwwtest.api.careerbuilder.com%2F&postURL=corporate%2Fcandidatesearch%2Fdocument%3Fcustomer_key%3DCKHT82M6S1Y6DRRBSQLY%26document_id%3D3F1AASDQWAS123123&method=delete&contentType=application%2Fjson&acceptType=application%2Fjson&version=default&region=staging&flow=client_credentials&userDid=&accountDid=&headers=&body=)
 
 ### Parameter
 
@@ -249,9 +431,7 @@ Customer Key and Document Key are required. Must set Content-Type = application/
 |document_id|string|Note: either provide the document_id or the DIDs|
 |DIDs|string|Note: either provide the document_id or the DIDs|
 
-### Response
-
-Success 200
+### Response Body
 
 |Field|Type|Description|
 |--- |--- |--- |
@@ -276,3 +456,32 @@ Success 200
 |SearchException|string||
 |SearchResultDIDs|string[]||
 |ErrorReturnedFromSolrSearch|string[]||
+
+**Sample request:**
+```
+https://api.careerbuilder.com/corporate/candidatesearch/document?customer_key=CSTESTSQUIRRELY00001&document_id=3F1AASDQWAS123123
+```
+
+**Sample response:**
+
+```json
+{
+  "data": {
+    "status_code": 200
+  },
+  "timing": {
+    "time_received": "2018-12-06T19:59:22.6824285Z",
+    "time_elapsed": 5.280952
+  },
+  "forensics": {
+    "input": {
+      "document_id": "3F1AASDQWAS123123",
+      "customer_key": "CSTESTSQUIRRELY00001",
+      "request_id": "CSREQ004C06WC2FF7MY52H8"
+    },
+    "internal_forensics": {
+      "StatusCodeReturnedFromSearchCore": 0
+    }
+  }
+}
+```

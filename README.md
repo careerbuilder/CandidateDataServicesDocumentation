@@ -10,7 +10,7 @@ CDS APIs are concentrated into two areas: Candidate Data & Candidate Search.
 Used to create and manipulate Candidate Data.
 * [Candidate Upload API](/UploadAPI.md)
 * [Client API](/ClientAPI.md)
-* Candidate Status API
+* [Candidate Status API](/CandidateStatusAPI.md)
 * [Recruiter Actions API](/ActionsAPI.md)
 * [Status API](/StatusAPI.md)
 
